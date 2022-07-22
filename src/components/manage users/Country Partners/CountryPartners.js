@@ -61,7 +61,7 @@ const CountryPartners = () => {
     });
   }
 
-  function submitForm() {
+  function saveForm() {
     if(formData.password != formData.passwordConfirm){
       console.log("passCode does not match")
     }else{
@@ -121,7 +121,7 @@ const CountryPartners = () => {
               Password<span className="star-color">*</span>
             </label>
             <input
-              type="text"
+              type="password"
               className="input-box"
               onChange={handleChange}
               id="password"
@@ -185,13 +185,14 @@ const CountryPartners = () => {
               Confirm Password<span className="star-color">*</span>
             </label>
             <input
-              type="text"
+               type="password"
               className="input-box"
               onChange={handleChange}
               id="password"
               value={formData.passwordConfirm}
               placeholder="Confirm Password"
               name="passwordConfirm"
+              required
             />
           </div>
 
@@ -216,14 +217,13 @@ const CountryPartners = () => {
       </form>
 
       <div className="btn-container">
-        <button className="submit-btn">
-          <span class="icon"></span>
-          <a href=""></a>
-          <span></span>Add another user
+        <button className="add-btn">
+        <span className="btn-icon">   <i className='fas fa-plus'></i> </span>Add another user
         </button>
-        <button className="submit-btn" onClick={submitForm}>
-          Save
-        </button>
+        <button  onClick={saveForm} className="save-btn">
+        
+         <span className="btn-icon"><i className="fa-solid fa-floppy-disk me-3"></i></span> 
+           Save</button>
       </div>
     </div>
   );
